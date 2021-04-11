@@ -22,4 +22,5 @@ function App() {
   );
 }
 
+// 他のファイルで読み込んで使えるようにexportしている。
 export default App;

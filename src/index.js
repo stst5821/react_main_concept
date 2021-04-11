@@ -22,9 +22,28 @@ const element = (
   </h1>
 )
 
+// 時間を表示する。
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(element, document.getElementById('clock'));
+}
+
+setInterval(tick, 1000);
+
 ReactDOM.render(
-  element,
-  document.getElementById('root')
+  // カスタムコンポーネント呼び出し。App.jsの内容を表示する。
+  <App />,
+  document.getElementById('app')
+);
+
+ReactDOM.render(
+  element, // 上記で設定した変数elementを描画
+  document.getElementById('root') // idから任意の要素ノードを取得するメソッド。この場合はindex.htmlの記述した divのid、rootを取得している。
 );
 
 // アプリケーションのパフォーマンスを測定・分析できるらしい。https://bit.ly/CRA-vitals
